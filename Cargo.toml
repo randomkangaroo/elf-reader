@@ -1,8 +1,12 @@
 [package]
 name = "elf-reader"
 version = "0.1.0"
+authors = ["Thomas Moulton"]
+description = "A simple Rust program to duplicate the functionality of readelf"
 edition = "2024"
+repository = "https://github.com/randomkangaroo/elf-reader"
 
 [dependencies]
-clap = "4.6.7"
+clap = { version = "4.6.7", features = ["derive"] }
+clap_derive = { version = "4.0.0-rc.1" }
 elf = "0.8.0"

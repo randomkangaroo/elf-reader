@@ -1,11 +1,17 @@
+use crate::args::Cli;
+use clap::Parser;
 use elf::ElfBytes;
 use elf::endian::AnyEndian;
 use elf::to_str;
 use std::fs;
 use std::path::PathBuf;
 
+mod args;
+
 fn main() {
     // TODO: get a file to parse from args using clap
+    let args = Cli::parse();
+    println!("File name: {:?}", args.file.unwrap());
     let file_path = PathBuf::from("/usr/bin/sh");
     // TODO: make this error handling robust
     let file_data = fs::read(file_path).expect("Could not read the file");
