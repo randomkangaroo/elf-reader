@@ -6,7 +6,7 @@ use std::path::PathBuf;
 #[command(version, about, long_about = None)]
 pub struct Cli {
     /// The file to get the ELF information about
-    pub file: Option<PathBuf>,
+    pub file: PathBuf,
     /// Flag to print all information about this ELF file
     #[arg(short, long)]
     pub all: bool,
